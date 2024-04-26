@@ -1,0 +1,36 @@
+[package]
+name = "hello_world"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+opt-level = 3
+panic = "abort"
+debug = true
+
+# [profile.dev]
+# codegen-units = 1
+# opt-level = 3
+
+
+[dependencies]
+rquickjs = { version = "0.6.0", features = [
+    "full-async",
+    "parallel",
+], default-features = false }
+futures-util = "0.3.28"
+itoa = "1.0.9"
+once_cell = "1.18.0"
+rand = "0.8.5"
+ryu = "1.0.15"
+tokio = { version = "1", features = ["full"] }
+bbqueue = "0.5.1"
+async-ringbuf = { version = "0.2.0-rc.2" }
+memchr = "2.6.4"
+async-channel = "2.1.1"
+dashmap = "5.5.3"
+fxhash = "0.2.1"
+ahash = "0.8.6"
+indextree = "4.6.0"
